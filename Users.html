@@ -5,7 +5,7 @@
     <title>Boca</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body >
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div style="background-color: #f8ce59;">
             <a class="navbar-brand" href="index.html">Boca</a>
@@ -88,51 +88,218 @@
 
 
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <form>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Example label</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                </div>
+        <table class="table">
 
-            </form>
-        </div>
+            <thead>
+                <tr>
+
+                    <th scope="col">User #th </td>
+                    <th scope="col">Siteth </td>
+                    <th scope="col">Usernameth </td>
+                    <th scope="col">ICPC IDth </td>
+                    <th scope="col">Typeth </td>
+                    <th scope="col">IPth </td>
+                    <th scope="col">LastLoginth </td>
+                    <th scope="col">LastLogoutth </td>
+                    <th scope="col">Enabledth </td>
+                    <th scope="col">Multith </td>
+                    <th scope="col">Fullnameth </td>
+                    <th scope="col">Descriptionth </td>
+                </tr>
+            </thead>
+            <tr>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1000</td>
+                        <td>1</td>
+                        <td>admin&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>admin&nbsp;</td>
+                        <td>181.63.39.4&nbsp;</td>
+                        <td>21:50:59 UTC - 19/Oct/2021</td>
+                        <td><a href="javascript: conf2('user.php?logout=1&amp;site=1&amp;user=1000')">Force Logout</a>
+                        </td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>Administrator&nbsp;</td>
+                        <td>&nbsp;</td>
+                        </th>
+                    </tr>
+                </tbody>
+
+        </table>
+    </div>
+
+    <center><b>Clicking on a user number will bring the user data for edition.<br>
+            To import the users, just fill in the import file field.<br>
+            The file must be in the format defined in the admin's manual.</b></center>
+    <div class="jumbotron jumbotron-fluid">
+        <form name="form1" enctype="multipart/form-data" method="post" action="user.php">
+            <input type="hidden" name="confirmation" value="noconfirm">
+            <center>
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td width="25%" align="right">Import file:</td>
+                            <td width="75%">
+                                <input type="file" class="form-control name=" name="importfile" size="40">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+            <script language="javascript">
+                function conf() {
+                    if (confirm("Confirm?")) {
+                        document.form1.confirmation.value = 'confirm';
+                    }
+                }
+            </script>
+
+            <div class="jumbotron jumbotron-fluid">
+                <center>
+                    <button type="button" class="btn btn-primary">IMPORT</button>
+                    <button type="button" class="btn btn-danger">CLEAR</button>
+                </center>
+            </div>
+        </form>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <center>
+            <div class="container">
+                <b>To create/edit one user, enter the data below.<br>
+                    Note that any changes will overwrite the already defined data.<br>
+                    (Specially care if you use a user number that is already existent.)<br>
+                    <br>
+                </b>
+        </center>
+
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <table border="0">
+
+
+            <tbody>
+                <tr>
+                    <td width="35%" align="right">User Site Number:</td>
+                    <td width="65%">
+                        <input type="text" class="form-control name=" usersitenumber" value="1" size="20"
+                            maxlength="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">User Number:</td>
+                    <td width="65%">
+                        <input type="text" class="form-control name=" usernumber" value="" size="20" maxlength="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">Username:</td>
+                    <td width="65%">
+                        <input type="text" class="form-control name=" username" value="" size="20" maxlength="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">ICPC ID:</td>
+                    <td width="65%">
+                        <input type="text" class="form-control name=" usericpcid" value="" size="20" maxlength="50">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">Type:</td>
+                    <td width="65%">
+                        <select class="form-control name=" usertype">
+                            <option selected="" value="team">Team</option>
+                            <option value="judge">Judge</option>
+                            <option value="admin">Admin</option>
+                            <option value="staff">Staff</option>
+                            <option value="score">Score</option>
+                            <option value="site">Site</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">Enabled:</td>
+                    <td width="65%">
+                        <select class="form-control name=" userenabled">
+                            <option selected="" value="t">Yes</option>
+                            <option value="f">No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">MultiLogins (local teams should be set to <b>No</b>):</td>
+                    <td width="65%">
+                        <select class="form-control name=" usermultilogin">
+                            <option value="t">Yes</option>
+                            <option selected="" value="f">No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">User Full Name:</td>
+                    <td width="65%">
+                        <input type="text" class="form-control name=" userfullname" value="" size="50" maxlength="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">User Description:</td>
+                    <td width="65%">
+                        <input type="text" class="form-control name=" userdesc" value="" size="50" maxlength="300">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">User IP:</td>
+                    <td width="65%">
+                        <input type="text" class="form-control name=" userip" value="" size="20" maxlength="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">Password:</td>
+                    <td width="65%">
+                        <input type="password" class="form-control name=" passwordn1" value="" size="20"
+                            maxlength="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">Retype Password:</td>
+                    <td width="65%">
+                        <input type="password" class="form-control name=" passwordn2" value="" size="20"
+                            maxlength="200">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">Allow password change:</td>
+                    <td width="65%">
+                        <select class="form-control name=" changepass">
+                            <option value="t">Yes</option>
+                            <option selected="" value="f">No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%" align="right">Admin (this user) Password:</td>
+                    <td width="65%">
+                        <input type="password" class="form-control name=" passwordo" value="" size="20" maxlength="200">
+                    </td>
+                </tr>
+
+
+            </tbody>
+
+
+
+        </table>
+    </div>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <center>
+            <button type="button" class="btn btn-primary">SEND</button>
+            <button type="button" class="btn btn-danger">CANCEL</button>
+        </center>
+    </div>
 
 </body>
 
